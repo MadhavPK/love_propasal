@@ -1,0 +1,71 @@
+<!-- 
+ @date March 16, 2026 at 9:34 PM
+ @source https://github.com/geekyscript/valentine_projects-propose_day
+ @source https://youtu.be/c-KDL_UkuZE
+ @music https://14891592-frank-f-djgus.mp3.pm/song/85312842-romantic-guitar/
+ @brief HTML game page with proposal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Love💗</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="game_style.css">
+</head>
+
+<body>
+    <!-- Background Music (Optional, user initiates) -->
+    <audio id="bg-music" loop>
+        <source src="multimedia/music/Frank_F._DJGus_-_Romantic_Guitar.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- UI Overlay -->
+        <div id="ui-layer">
+            <div id="score-board">
+                <span>❤️ Love Meter: </span>
+                <div class="progress-bar">
+                    <div id="love-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>Catch My Heart!</h1>
+            <p>Catch enough hearts to go to next Stage...</p>
+            <button id="start-btn" class="btn">Start Game</button>
+        </div>
+
+        <!-- Proposal Modal (Hidden initially) -->
+        <div id="proposal-screen" class="screen hidden">
+            <div class="proposal-content">
+                <h1>Shall We Proceed?</h1>
+                <p class="sub-text">You caught my heart!</p>
+                <div class="buttons">
+                    <button id="yes-btn" class="btn yes-btn">YES!</button>
+                    <button id="no-btn" class="btn no-btn">NOPE!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Celebration Overlay -->
+        <div id="celebration-screen" class="screen hidden">
+            <h1>Next Stage!</h1>
+            <p></p>
+        </div>
+    </div>
+
+    <script src="game_script.js"></script>
+</body>
+
+</html>
