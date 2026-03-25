@@ -243,9 +243,10 @@ function startGame() {
 
     // Play background music after user interaction (required by modern browsers)
     if (bgMusic) {
-        // bgMusic.play().catch((err) => {
-        //     console.warn('Background music could not autoplay:', err);
-        // });
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch((err) => {
+            console.warn('Background music could not autoplay:', err);
+        });
     }
     
     startScreen.classList.remove('active');
@@ -258,11 +259,12 @@ function startGame() {
 startBtn.addEventListener('click', startGame);
 
 yesBtn.addEventListener('click', () => {
-    proposalScreen.classList.remove('active');
-    proposalScreen.classList.add('hidden');
-    celebrationScreen.classList.remove('hidden');
-    celebrationScreen.classList.add('active');
-    triggerConfetti(); // Optional: Implement confetti
+    triggerConfetti();
+
+    // Redirect to main page
+    setTimeout(() => {
+        window.location.href = "../main/main_index.html";
+    }, 500);
 });
 
 // "No" button runs away
@@ -275,6 +277,7 @@ function moveNoButton() {
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
+    noBtn.style.transform = `scale(${Math.random() * 0.5 + 0.8})`;
 }
 
 function triggerConfetti() {
