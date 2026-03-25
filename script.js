@@ -1,24 +1,35 @@
-function startStory(){
+/**
+ * @file script.js
+ * @source https://chatgpt.com/share/69b6d72e-d6f4-8007-8cd1-e9072f68c410
+ * @date 2026-03-24 21:33:16
+ * @author ChatGPT and Me
+ * @brief A romantic webpage to propose to the love of my life
+ */
 
-document.getElementById("story").classList.remove("hidden")
+const envelope = document.getElementById("envelope");
+const letterText = document.getElementById("letterText");
 
-setTimeout(()=>{
-document.querySelector(".gallery").classList.remove("hidden")
-},2000)
+const message = "I made something for you... ❤️";
 
-setTimeout(()=>{
-document.querySelector(".love").classList.remove("hidden")
-},4000)
+let index = 0;
 
-setTimeout(()=>{
-document.querySelector(".proposal").classList.remove("hidden")
-},6000)
-
+function typeLetter() {
+  if (index < message.length) {
+    letterText.textContent += message.charAt(index);
+    index++;
+    setTimeout(typeLetter, 60);
+  }
 }
 
-function yesClicked(){
+envelope.addEventListener("click", () => {
+  envelope.classList.add("open");
 
-document.querySelector(".proposal").style.display="none"
-document.getElementById("result").classList.remove("hidden")
+  setTimeout(() => {
+    typeLetter();
+  }, 800);
 
-}
+  // Redirect after animation
+  setTimeout(() => {
+    window.location.href = "./game/game_index.html"; // redirect to game page
+  }, 4000);
+});

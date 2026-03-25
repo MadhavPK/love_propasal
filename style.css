@@ -1,60 +1,86 @@
-body{
-font-family: Arial;
-margin:0;
-text-align:center;
-background:#fff0f5;
+/**
+ * @file style.css
+ * @source https://chatgpt.com/share/69b6d72e-d6f4-8007-8cd1-e9072f68c410
+ * @date 2026-03-24 21:33:48
+ * @author ChatGPT and Me
+ */
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #f5efe6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cormorant Garamond", serif;
 }
 
-section{
-padding:100px 20px;
+.container {
+  text-align: center;
 }
 
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+/* Envelope */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: #e8dcc3;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-button{
-padding:12px 30px;
-font-size:18px;
-background:#ff4d6d;
-color:white;
-border:none;
-border-radius:25px;
-cursor:pointer;
+/* Flap */
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #d8c3a5;
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
+  transform-origin: top;
+  transition: transform 1s ease;
 }
 
-button:hover{
-background:#ff1f4b;
+/* Letter */
+.letter {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: white;
+  top: 100%;
+  left: 5%;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: top 1.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.photos{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+.letter p {
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease 0.5s;
 }
 
-.photos img{
-width:250px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+/* Open state */
+.envelope.open .flap {
+  transform: rotateX(180deg);
 }
 
-.hidden{
-display:none;
+.envelope.open .letter {
+  top: -60px;
 }
 
-.proposal h1{
-font-size:50px;
-color:#d1003f;
+.envelope.open .letter p {
+  opacity: 1;
 }
 
-#result{
-padding:100px;
-font-size:40px;
-color:#ff004c;
+.hint {
+  margin-top: 20px;
+  color: #7a6452;
+  font-size: 14px;
 }
