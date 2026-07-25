@@ -6,29 +6,51 @@ My fav girl in the entire universe
 Majhi chakulee
 Mrudula Godbole 💘
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Love Letter💌</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="container">
+  <div id="screen-landing" class="screen active">
+    <h2 style="font-family: 'Fredoka One', cursive; margin-bottom: 20px;">You've got mail!</h2>
+    <div class="envelope-container" onclick="showScreen('screen-letter')">
+      💌
+    </div>
+    <p style="margin-top: 15px;">Tap to open</p>
+  </div>
 
-  <div class="envelope" id="envelope">
-    <div class="flap"></div>
-    <div class="letter">
-      <p id="letterText"></p>
+  <div id="screen-letter" class="screen">
+    <div class="letter-paper">
+      <h2>Hey there! ❤️</h2>
+      <p>I have something really important to ask you, but first, you have to prove your worth by catching some of my
+        love!</p>
+      <p><strong>Goal:</strong> Catch 10 falling hearts.</p>
+      <button onclick="startGame()">Continue to Game 🎮</button>
     </div>
   </div>
 
-  <p class="hint">Click the letter 💌</p>
+  <div id="screen-game" class="screen">
+    <div class="score-board">Hearts Caught: <span id="score">0</span> / 10</div>
+    <div id="game-area"></div>
+  </div>
 
-</div>
+  <div id="screen-proposal" class="screen">
+    <h1 class="proposal-title">Will you be mine? 💍</h1>
+    <div class="buttons-container">
+      <button id="btn-yes" onclick="showScreen('screen-celebration'); startCelebration();">YES! ❤️</button>
+      <button id="btn-no">NO</button>
+    </div>
+  </div>
+
+  <div id="screen-celebration" class="screen">
+    <h1 class="celebration-text">YAY! 🎉❤️</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">I love you to the moon and back!</p>
+  </div>
 
 <script src="script.js"></script>
 </body>
