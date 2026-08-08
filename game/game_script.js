@@ -261,9 +261,9 @@ startBtn.addEventListener('click', startGame);
 yesBtn.addEventListener('click', () => {
     triggerConfetti();
 
-    // Redirect to main page
+    // Redirect to surprise page
     setTimeout(() => {
-        window.location.href = "../main/main_index.html";
+        window.location.href = "../surprise/surprise_index.html";
     }, 500);
 });
 
