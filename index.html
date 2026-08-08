@@ -1,5 +1,6 @@
 <!-- 
 @source https://chatgpt.com/share/69b6d72e-d6f4-8007-8cd1-e9072f68c410
+@source https://share.gemini.google/YOroKuUXgJEG
 @author ChatGPT and Me
 @brief A romantic webpage to propose to the love of my life.
 My fav girl in the entire universe
@@ -9,27 +10,33 @@ Mrudula Godbole 💘
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love Letter💌</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+  <div id="screen-landing" class="screen active">
+    <h2 style="font-family: 'Fredoka One', cursive; margin-bottom: 20px;">You've got mail!</h2>
+    <div class="envelope-container" onclick="showScreen('screen-letter')">
+      💌
+    </div>
+    <p style="margin-top: 15px;">Tap to open</p>
+  </div>
 
-  <div class="envelope" id="envelope">
-    <div class="flap"></div>
-    <div class="letter">
-      <p id="letterText"></p>
+  <div id="screen-letter" class="screen">
+    <div class="letter-paper">
+      <h2>Hey there! ❤️</h2>
+      <p>I wanted to send a little message to remind you how special you are to me!</p>
+      <button onclick="window.location.href='./game/game_index.html'">Continue 🎮</button>
     </div>
   </div>
 
-  <p class="hint">Click the letter 💌</p>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

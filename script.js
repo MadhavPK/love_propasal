@@ -6,30 +6,10 @@
  * @brief A romantic webpage to propose to the love of my life
  */
 
-const envelope = document.getElementById("envelope");
-const letterText = document.getElementById("letterText");
-
-const message = "I made something for you... ❤️";
-
-let index = 0;
-
-function typeLetter() {
-  if (index < message.length) {
-    letterText.textContent += message.charAt(index);
-    index++;
-    setTimeout(typeLetter, 60);
-  }
+// Screen Navigation
+function showScreen(screenId) {
+  document.querySelectorAll('.screen').forEach(screen => {
+    screen.classList.remove('active');
+  });
+  document.getElementById(screenId).classList.add('active');
 }
-
-envelope.addEventListener("click", () => {
-  envelope.classList.add("open");
-
-  setTimeout(() => {
-    typeLetter();
-  }, 800);
-
-  // Redirect after animation
-  setTimeout(() => {
-    window.location.href = "./game/game_index.html"; // redirect to game page
-  }, 4000);
-});
