@@ -49,5 +49,10 @@ noteBtn.addEventListener("click", () => {
 });
 
 beginBtn.addEventListener("click", () => {
-  beginBtn.textContent = "Your story starts here";
+  beginBtn.textContent = "Taking you down memory lane... ❤️";
+
+  // Redirect to the new photo gallery after a short delay
+  setTimeout(() => {
+    window.location.href = "../gallery/gallery_index.html";
+  }, 2000);
 });
