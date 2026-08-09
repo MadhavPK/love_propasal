@@ -1,0 +1,22 @@
+/**
+ * @file master_style.css
+ * @source https: //share.gemini.google/vkzb5rGNb0Rw
+ * @date 2026-08-09 18:26:45
+ */
+
+ /* This CSS makes the iframe take up the entire screen */
+ body,
+ html {
+     margin: 0;
+     padding: 0;
+     height: 100%;
+     overflow: hidden;
+     background-color: #ffe6eb;
+ }
+
+ iframe {
+     width: 100vw;
+     height: 100vh;
+     border: none;
+     display: block;
+ }

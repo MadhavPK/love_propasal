@@ -24,7 +24,6 @@ const celebrationScreen = document.getElementById('celebration-screen');
 const startBtn = document.getElementById('start-btn');
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
-const bgMusic = document.getElementById('bg-music');
 
 // Resize Handling
 function resize() {
@@ -241,13 +240,8 @@ function startGame() {
     updateScore();
     gameState = 'PLAYING';
 
-    // Play background music after user interaction (required by modern browsers)
-    if (bgMusic) {
-        bgMusic.volume = 0.5;
-        bgMusic.play().catch((err) => {
-            console.warn('Background music could not autoplay:', err);
-        });
-    }
+    // Tell the master_script.js parent window to play the music
+    window.parent.postMessage('playMusic', '*');
     
     startScreen.classList.remove('active');
     startScreen.classList.add('hidden');
