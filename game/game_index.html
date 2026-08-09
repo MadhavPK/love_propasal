@@ -3,6 +3,7 @@
  @source https://github.com/geekyscript/valentine_projects-propose_day
  @source https://youtu.be/c-KDL_UkuZE
  @music https://14891592-frank-f-djgus.mp3.pm/song/85312842-romantic-guitar/
+ @music https://pixabay.com/sound-effects/film-special-effects-90s-game-ui-6-185099/
  @brief HTML game page with proposal.
 
 -->
@@ -21,7 +22,11 @@
 </head>
 
 <body>
-   
+    <!-- music played everytime heart is caught -->
+    <audio id="catch-sound">
+        <source src="../assets/music/catch-pop.mp3" type="audio/mpeg">
+    </audio>
+
     <div id="game-container">
         <canvas id="gameCanvas"></canvas>
 

@@ -24,6 +24,7 @@ const celebrationScreen = document.getElementById('celebration-screen');
 const startBtn = document.getElementById('start-btn');
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
+const catchSound = document.getElementById('catch-sound');
 
 // Resize Handling
 function resize() {
@@ -189,6 +190,13 @@ function updateGame() {
                 // Catch!
                 hearts.splice(index, 1);
                 score++;
+
+                // --- Play the sound effect ---
+                if (catchSound) {
+                    catchSound.currentTime = 0; // Resets the audio so it can play rapidly if she catches two at once!
+                    catchSound.play().catch((err) => console.log('Sound effect blocked:', err));
+                }
+
                 createParticles(heart.x, heart.y);
                 updateScore();
                 
